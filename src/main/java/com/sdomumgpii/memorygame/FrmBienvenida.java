@@ -1,6 +1,8 @@
 package com.sdomumgpii.memorygame;
 
 import com.sun.awt.AWTUtilities;
+import java.awt.Color;
+import java.awt.Font;
 import static java.lang.Thread.sleep;
 import java.util.Calendar;
 import java.util.logging.Level;
@@ -24,11 +26,11 @@ public class FrmBienvenida extends javax.swing.JFrame implements Runnable {
         tiempo = new Thread(this);
         tiempo.start();
         tempo();
+        lblReloj.setBackground(Color.black);
+        lblReloj.setOpaque(true);
     }
     
     public String hora(){
-        
-        
         Calendar calendario = Calendar.getInstance();
         hora = calendario.get(Calendar.HOUR_OF_DAY);
         minuto = calendario.get(Calendar.MINUTE);
@@ -52,6 +54,7 @@ public class FrmBienvenida extends javax.swing.JFrame implements Runnable {
                         try {
                             sleep(1);
                             lblReloj.setText(hora());
+                            //lblReloj.setFont(Font.createFont(Font.TRUETYPE_FONT, getClass().getResource("alarm clock.ttf").openStream()));
                         } catch (Exception e) {
 
                         }
@@ -86,41 +89,42 @@ public class FrmBienvenida extends javax.swing.JFrame implements Runnable {
         lblReloj.setForeground(new java.awt.Color(102, 255, 0));
         lblReloj.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblReloj.setText("00:00:00");
+        lblReloj.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel2))
-                    .addComponent(lblReloj))
-                .addContainerGap(229, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(22, 22, 22)
-                    .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(23, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel2))
+                            .addComponent(lblReloj)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
                 .addComponent(lblReloj)
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(218, 218, 218)
-                    .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(218, Short.MAX_VALUE)))
         );
 
         setSize(new java.awt.Dimension(640, 480));
@@ -159,7 +163,7 @@ public class FrmBienvenida extends javax.swing.JFrame implements Runnable {
 //                reloj.setText(hr);
             }
             this.dispose();
-//            new welcomePage().setVisible(true);
+            new FrmMenu().setVisible(true);
         } catch (InterruptedException ex) {
             Logger.getLogger(FrmBienvenida.class.getName()).log(Level.SEVERE, null, ex);
         }
