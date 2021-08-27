@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sdomumgpii.memorygame;
 
+import clases.UsuarioJuego;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
@@ -28,7 +24,7 @@ public class FrmUsuario extends javax.swing.JFrame {
         lblReloj.setBackground(Color.black);
         lblReloj.setOpaque(true);
         jLabel4.setVisible(false);
-        jPasswordField2.setVisible(false);
+        pass2Txt.setVisible(false);
     }
 
     /**
@@ -45,13 +41,13 @@ public class FrmUsuario extends javax.swing.JFrame {
         lblReloj = new javax.swing.JLabel();
         lblImage = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        usuarioTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        mailTxt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        pass1Txt = new javax.swing.JPasswordField();
+        pass2Txt = new javax.swing.JPasswordField();
         jPanel1 = new javax.swing.JPanel();
         btnCancelar = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
@@ -122,9 +118,9 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         jLabel4.setText("Confirmar");
 
-        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        pass1Txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jPasswordField1KeyReleased(evt);
+                pass1TxtKeyReleased(evt);
             }
         });
 
@@ -185,7 +181,7 @@ public class FrmUsuario extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(102, 102, 102)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(usuarioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -193,9 +189,9 @@ public class FrmUsuario extends javax.swing.JFrame {
                                     .addComponent(jLabel3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(mailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pass1Txt, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pass2Txt, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -216,30 +212,30 @@ public class FrmUsuario extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(usuarioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(pass1Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pass2Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(658, 524));
+        setSize(new java.awt.Dimension(684, 524));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     File archivo;
-    
+
     private void lblImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImageMouseClicked
         int resultado;
 
@@ -248,46 +244,57 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         buscador.jFileChooser.setFileFilter(formato);
         resultado = buscador.jFileChooser.showOpenDialog(null);
-        
-        if(JFileChooser.APPROVE_OPTION == resultado){
+
+        if (JFileChooser.APPROVE_OPTION == resultado) {
             archivo = buscador.jFileChooser.getSelectedFile();
-            
-            try{
+
+            try {
                 ImageIcon Img = new ImageIcon(archivo.toString());
-                
-                Icon icono = new ImageIcon(Img.getImage().getScaledInstance(lblImage.getWidth(), lblImage.getHeight(), Image.SCALE_DEFAULT));
+
+                Icon icono = new ImageIcon(Img.getImage().getScaledInstance(lblImage.getWidth(), lblImage.getHeight(),
+                        Image.SCALE_DEFAULT));
                 lblImage.setIcon(icono);
-            }catch(Exception ex){
+            } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Error al abrir " + ex);
             }
         }
-        
+
         //JOptionPane.showMessageDialog(null, "HOLA", "Seleccion de imagen", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_lblImageMouseClicked
 
-    private void jPasswordField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyReleased
+    private void pass1TxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pass1TxtKeyReleased
         jLabel4.setVisible(true);
-        jPasswordField2.setVisible(true);
-    }//GEN-LAST:event_jPasswordField1KeyReleased
+        pass2Txt.setVisible(true);
+    }//GEN-LAST:event_pass1TxtKeyReleased
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.dispose();
+        UsuarioJuego usuario = new UsuarioJuego();
+        
+        usuario.validarUsuario(usuarioTxt.getText(), pass1Txt.getText());
+        
+        //this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        if(jPasswordField1.getText().equals(jPasswordField2.getText())){
-            JOptionPane.showMessageDialog(null, "Son iguales");
-        }else{
+        UsuarioJuego usuario = new UsuarioJuego();
+
+        if (pass1Txt.getText().equals(pass2Txt.getText())) {
+            //JOptionPane.showMessageDialog(null, "Son iguales");
+            usuario.usuario = usuarioTxt.getText();
+            usuario.email = mailTxt.getText();
+            usuario.contraseña1 = pass1Txt.getText();
+            usuario.contraseña2 = pass2Txt.getText();
+            usuario.nuevoUsuario();
+            this.dispose();
+
+        } else {
             JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden, intente de nuevo");
-            jPasswordField1.requestFocus();
-            jPasswordField1.selectAll();
+            pass1Txt.requestFocus();
+            pass1Txt.selectAll();
         }
-        //this.dispose();
+        
     }//GEN-LAST:event_btnAceptarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -329,13 +336,13 @@ public class FrmUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblMenu;
     private javax.swing.JLabel lblReloj;
     private javax.swing.JLabel lblUMG;
+    private javax.swing.JTextField mailTxt;
+    private javax.swing.JPasswordField pass1Txt;
+    private javax.swing.JPasswordField pass2Txt;
+    private javax.swing.JTextField usuarioTxt;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,6 @@
 package com.sdomumgpii.memorygame;
 
+import clases.SonidoJuego;
 import com.sun.awt.AWTUtilities;
 import java.awt.Color;
 import java.awt.Font;
@@ -28,6 +29,9 @@ public class FrmBienvenida extends javax.swing.JFrame implements Runnable {
         tempo();
         lblReloj.setBackground(Color.black);
         lblReloj.setOpaque(true);
+        SonidoJuego soundsT = new SonidoJuego();
+        soundsT.tiposonido(0);
+        soundsT.start();
     }
     
     public String hora(){
