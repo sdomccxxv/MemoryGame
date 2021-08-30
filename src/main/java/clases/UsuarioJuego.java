@@ -1,6 +1,7 @@
 package clases;
 
 import com.sdomumgpii.memorygame.FrmJuego;
+import com.sdomumgpii.memorygame.FrmJuego2;
 import com.sdomumgpii.memorygame.FrmLogin;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -81,10 +82,10 @@ public class UsuarioJuego {
                 if(u[0].equals(claveMurci(usuario)) && u[2].equals(claveMurci(contraseña))){
                     //JOptionPane.showMessageDialog(null, "Son iguales");
                     isLogin = true;
-                    FrmJuego juego = new FrmJuego();
-                    juego.setLocationRelativeTo(null);
+                    FrmJuego2 juego = new FrmJuego2();
+                    //juego.setLocationRelativeTo(null);
                     JOptionPane.showMessageDialog(null, "A jugar");
-                    juego.setVisible(true);
+                    //juego.setVisible(true);
                     //break;
                     
                 }
